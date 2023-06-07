@@ -16,6 +16,7 @@
 package org.telosys.tools.dsl.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -94,6 +95,24 @@ public class DslModelAttribute implements Attribute {
     private String  size; // String for size with comma ( eg "8,2" ) // Added in v 3.4.0
 	private boolean isUnique = false ; // Added in v 3.4.0
 
+	//SICODE - Begin
+	private ArrayList<List<String>> sirenCustomMatrix = null;
+	
+	public ArrayList<List<String>> getSirenCustomAnnotations() {
+		return sirenCustomMatrix;
+	}
+	
+	public void addSirenCustomAnnotation(List<String> customAnnotation) {
+		if (customAnnotation  != null) {
+			if (sirenCustomMatrix == null) {
+				sirenCustomMatrix = new ArrayList<List<String>>(); 
+			}
+			sirenCustomMatrix.add(customAnnotation);
+		}
+	}
+	//SICODE - End
+	
+	
 	/**
 	 * Constructor 
 	 * @param name
