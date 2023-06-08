@@ -72,7 +72,6 @@ import org.telosys.tools.dsl.parser.annotations.PastAnnotation;
 import org.telosys.tools.dsl.parser.annotations.PatternAnnotation;
 import org.telosys.tools.dsl.parser.annotations.PrimitiveTypeAnnotation;
 import org.telosys.tools.dsl.parser.annotations.ReadOnlyAnnotation;
-import org.telosys.tools.dsl.parser.annotations.SirenCustomAnnotation;
 import org.telosys.tools.dsl.parser.annotations.SizeAnnotation;
 import org.telosys.tools.dsl.parser.annotations.SizeMaxAnnotation;
 import org.telosys.tools.dsl.parser.annotations.SizeMinAnnotation;
@@ -164,7 +163,9 @@ public class AnnotationDefinitions {
 		annotations.add(new OrphanRemovalAnnotation()); 
 		annotations.add(new CascadeAnnotation()); 
 		annotations.add(new JoinEntityAnnotation());
-		annotations.add(new SirenCustomAnnotation());//SICODE
+		
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NoBlanksAnnotation());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.ArabicOrEnglishOnlyConstraintAnnotation());
 		
 	}
 	

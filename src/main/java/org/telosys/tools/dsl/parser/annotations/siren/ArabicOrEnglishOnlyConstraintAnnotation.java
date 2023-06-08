@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.telosys.tools.dsl.parser.annotations;
+package org.telosys.tools.dsl.parser.annotations.siren;
 
 import java.util.List;
 
@@ -25,6 +25,7 @@ import org.telosys.tools.dsl.parser.annotation.AnnotationParamType;
 import org.telosys.tools.dsl.parser.annotation.AnnotationScope;
 import org.telosys.tools.dsl.parser.commons.ParamError;
 import org.telosys.tools.dsl.parser.model.DomainAnnotation;
+import org.telosys.tools.generic.model.SirenParams;
 
 /**
  * 'Cascade' annotation
@@ -33,27 +34,18 @@ import org.telosys.tools.dsl.parser.model.DomainAnnotation;
  * @author Laurent Guerin
  *
  */
-public class SirenCustomAnnotation extends AnnotationDefinition {
+public class ArabicOrEnglishOnlyConstraintAnnotation extends AnnotationDefinition {
 
-	public SirenCustomAnnotation() {
-		super("SirenCustom"/*AnnotationName.CASCADE*/, AnnotationParamType.LIST, AnnotationScope.ATTRIBUTE);
-	}
-	
-//	@ADASD, "please ", "Min", "2123"
-//	@SirenValidation("adasd", "please", "Min", "100", "Max", "1000")
-	@Override
-	public void afterCreation(String entityName, String fieldName, DomainAnnotation annotation) throws ParamError {
-		if ( annotation.getParameterAsList().isEmpty() ) {
-			throw new ParamError("at least 1 cascade option required");
-		} 
+	public ArabicOrEnglishOnlyConstraintAnnotation() {
+		super(SirenParams.ArabicOrEnglishOnlyConstraint, AnnotationParamType.NONE, AnnotationScope.ATTRIBUTE);
 	}
 	
 	@Override
 	public void apply(DslModel model, DslModelEntity entity, DslModelAttribute attribute, Object paramValue) throws ParamError {
 		checkParamValue(entity, attribute, paramValue);
-		List<String> list = getListOfParameters(paramValue);
+		//List<String> list = getListOfParameters(paramValue);
 		
-		attribute.addSirenCustomAnnotation(list);
+		attribute.setSirenParam(SirenParams.ArabicOrEnglishOnlyConstraint, SirenParams.Exists, true);
 	}
 
 }
