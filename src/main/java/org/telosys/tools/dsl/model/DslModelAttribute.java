@@ -117,23 +117,7 @@ public class DslModelAttribute implements Attribute {
 		}
 		sirenParams.setSirenParam(annotation, key, object);
 	}
-	
-//	private ArrayList<List<String>> sirenCustomMatrix = null;
-//	
-//	public ArrayList<List<String>> getSirenCustomAnnotations() {
-//		return sirenCustomMatrix;
-//	}
-//	
-//	public void addSirenCustomAnnotation(List<String> customAnnotation) {
-//		if (customAnnotation  != null) {
-//			if (sirenCustomMatrix == null) {
-//				sirenCustomMatrix = new ArrayList<List<String>>(); 
-//			}
-//			sirenCustomMatrix.add(customAnnotation);
-//		}
-//	}
 	//SICODE - End
-	
 	
 	/**
 	 * Constructor 

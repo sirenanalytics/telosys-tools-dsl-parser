@@ -21,6 +21,7 @@ import org.telosys.tools.dsl.tags.Tags;
 import org.telosys.tools.generic.model.CascadeOptions;
 import org.telosys.tools.generic.model.Link;
 import org.telosys.tools.generic.model.LinkAttribute;
+import org.telosys.tools.generic.model.SirenParams;
 import org.telosys.tools.generic.model.TagContainer;
 import org.telosys.tools.generic.model.enums.BooleanValue;
 import org.telosys.tools.generic.model.enums.Cardinality;
@@ -83,6 +84,30 @@ public class DslModelLink implements Link {
 		super();
         this.fieldName = fieldName;
 	}
+
+	//SICODE - Begin
+	private SirenParams sirenParams;
+
+	@Override
+	public SirenParams getSirenParams() {
+		return sirenParams;
+	};
+	
+	@Override
+	public Object getSirenParam(String annotation, String key) {
+		if (sirenParams != null) {
+			return sirenParams.getSirenParam(annotation, key);
+		}
+		return null;
+	}
+
+	public void setSirenParam(String annotation, String key, Object object) {
+		if (sirenParams == null) {
+			sirenParams = new SirenParams();
+		}
+		sirenParams.setSirenParam(annotation, key, object);
+	}
+	//SICODE - End
 
     @Override
     public List<LinkAttribute> getAttributes() {
