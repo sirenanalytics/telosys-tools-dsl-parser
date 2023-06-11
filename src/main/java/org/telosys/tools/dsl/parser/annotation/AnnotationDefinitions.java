@@ -172,8 +172,11 @@ public class AnnotationDefinitions {
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.MinSizeAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.MaxSizeAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.EmailConstraintAnnotation());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.EmailNotMandatoryConstraintAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NumbersGreaterThanZeroOnlyConstraintAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NotNullKeyAnnotation());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.FutureOrPresentAnnotation());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonIgnoreAnnotation());
 	}
 	
 	private AnnotationDefinitions() {
