@@ -166,6 +166,7 @@ public class AnnotationDefinitions {
 		
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NoBlanksAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NoNullsAnnotation());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.OrderByAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.LebaneseMobileConstraintAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.ArabicOrEnglishOnlyConstraintAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.MinMaxSizeAnnotation());
