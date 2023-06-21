@@ -178,6 +178,8 @@ public class AnnotationDefinitions {
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NotNullKeyAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.FutureOrPresentAnnotation());
 		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonIgnoreAnnotation());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonBackReference());
+		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonManagedReference());
 	}
 	
 	private AnnotationDefinitions() {
