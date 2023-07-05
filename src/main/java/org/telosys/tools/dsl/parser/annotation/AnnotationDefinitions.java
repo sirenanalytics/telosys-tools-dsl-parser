@@ -19,6 +19,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.telosys.tools.commons.plugins.PluginHandler;
 import org.telosys.tools.dsl.parser.annotations.AbstractAnnotation;
 import org.telosys.tools.dsl.parser.annotations.AggregateRootAnnotation;
 import org.telosys.tools.dsl.parser.annotations.AutoIncrementedAnnotation;
@@ -164,22 +165,7 @@ public class AnnotationDefinitions {
 		annotations.add(new CascadeAnnotation()); 
 		annotations.add(new JoinEntityAnnotation());
 		
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NoBlanksAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NoNullsAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.OrderByAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.LebaneseMobileConstraintAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.ArabicOrEnglishOnlyConstraintAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.MinMaxSizeAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.MinSizeAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.MaxSizeAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.EmailConstraintAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.EmailNotMandatoryConstraintAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NumbersGreaterThanZeroOnlyConstraintAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.NotNullKeyAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.FutureOrPresentAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonIgnoreAnnotation());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonBackReference());
-		annotations.add(new org.telosys.tools.dsl.parser.annotations.siren.JsonManagedReference());
+		PluginHandler.addAnnotations(annotations);
 	}
 	
 	private AnnotationDefinitions() {

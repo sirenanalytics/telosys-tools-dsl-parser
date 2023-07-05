@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.telosys.tools.commons.plugins.IPluginAnnotationData;
 import org.telosys.tools.dsl.tags.Tags;
 import org.telosys.tools.generic.model.Attribute;
 import org.telosys.tools.generic.model.Entity;
@@ -76,6 +77,19 @@ public class DslModelEntity implements Entity {
 		this.className = className;
 	}
 	//--------------------------------------------------------------------------
+	
+	//SICODE - Begin
+    private IPluginAnnotationData pluginAnnotationData;
+    
+    public IPluginAnnotationData getPluginAnnotationData() {
+    	return pluginAnnotationData;
+    }
+    
+    public void setPluginAnnotationData(IPluginAnnotationData pluginAnnotationData) {
+    	this.pluginAnnotationData = pluginAnnotationData;
+    }    
+	//SICODE - End
+	
 	@Override
 	public List<Attribute> getAttributes() {
 		return attributes;

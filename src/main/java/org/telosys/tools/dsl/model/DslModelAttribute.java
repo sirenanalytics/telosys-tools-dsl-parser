@@ -19,11 +19,11 @@ import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.telosys.tools.commons.plugins.IPluginAnnotationData;
 import org.telosys.tools.dsl.tags.Tags;
 import org.telosys.tools.generic.model.Attribute;
 import org.telosys.tools.generic.model.Entity;
 import org.telosys.tools.generic.model.ForeignKeyPart;
-import org.telosys.tools.generic.model.SirenParams;
 import org.telosys.tools.generic.model.TagContainer;
 import org.telosys.tools.generic.model.enums.BooleanValue;
 import org.telosys.tools.generic.model.enums.DateType;
@@ -96,27 +96,16 @@ public class DslModelAttribute implements Attribute {
 	private boolean isUnique = false ; // Added in v 3.4.0
 
 	//SICODE - Begin
-	private SirenParams sirenParams;
+	private IPluginAnnotationData pluginAnnotationData = null;
 
 	@Override
-	public SirenParams getSirenParams() {
-		return sirenParams;
-	};
+	public IPluginAnnotationData getPluginAnnotationData() {
+		return pluginAnnotationData;
+	}
 	
-	@Override
-	public Object getSirenParam(String annotation, String key) {
-		if (sirenParams != null) {
-			return sirenParams.getSirenParam(annotation, key);
-		}
-		return null;
-	}
-
-	public void setSirenParam(String annotation, String key, Object object) {
-		if (sirenParams == null) {
-			sirenParams = new SirenParams();
-		}
-		sirenParams.setSirenParam(annotation, key, object);
-	}
+    public void setPluginAnnotationData(IPluginAnnotationData pluginAnnotationData) {
+    	this.pluginAnnotationData = pluginAnnotationData;
+    }    
 	//SICODE - End
 	
 	/**
