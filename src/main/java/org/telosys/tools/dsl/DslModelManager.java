@@ -17,6 +17,7 @@ package org.telosys.tools.dsl;
 
 import java.io.File;
 
+import org.telosys.tools.commons.plugins.PluginHandler;
 import org.telosys.tools.dsl.commons.ModelInfo;
 import org.telosys.tools.dsl.commons.ModelInfoLoader;
 import org.telosys.tools.dsl.converter.ModelConverter;
@@ -103,8 +104,13 @@ public class DslModelManager {
      * @return
      */
     private ParsingResult step1ParseModel(File modelFolder) {
-    	ParserV2 dslParser = new ParserV2();
-		return dslParser.parseModel(modelFolder);
+    	ParsingResult result = (ParsingResult) PluginHandler.parseModel(modelFolder);
+    	if (result != null) {
+    		return result;
+    	} else {
+	    	ParserV2 dslParser = new ParserV2();
+			return dslParser.parseModel(modelFolder);
+    	}
     }
     
     /**
